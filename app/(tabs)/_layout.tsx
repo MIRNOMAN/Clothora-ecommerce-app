@@ -25,6 +25,24 @@ export default function TabsLayout() {
           ),
         }}
       />
+
+      {/* main2.tsx হাইড করার জন্য */}
+      <Tabs.Screen
+        name="main2"
+        options={{
+          href: null, // এটি ট্যাব বার থেকে আইকন সরিয়ে দেবে
+          headerShown: false, 
+        }}
+      />
+
+      {/* main3.tsx হাইড করার জন্য */}
+      <Tabs.Screen
+        name="main3"
+        options={{
+          href: null, // এটিও হাইড হয়ে যাবে
+          headerShown: false,
+        }}
+      />
       <Tabs.Screen
         name="shop"
         options={{
