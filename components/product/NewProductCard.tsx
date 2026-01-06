@@ -1,26 +1,26 @@
-import React from 'react';
-import { View, Text, Image, Pressable } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import Animated, { FadeInRight } from 'react-native-reanimated';
+import { Ionicons } from "@expo/vector-icons";
+import React from "react";
+import { Image, Pressable, Text, View } from "react-native";
+import Animated, { FadeInRight } from "react-native-reanimated";
 
-export const ProductCard = ({ item, index }: any) => {
+export const NewProductCard = ({ item, index }: any) => {
   return (
-    <Animated.View 
-      entering={FadeInRight.delay(index * 100)} 
+    <Animated.View
+      entering={FadeInRight.delay(index * 100)}
       className="w-[150px] mr-4 mb-4"
     >
       {/* Product Image Section */}
       <View className="relative shadow-sm ">
-        <Image 
-          source={{ uri: item.image }} 
-          className="w-full h-[155px] rounded-lg" 
+        <Image
+          source={{ uri: item.image }}
+          className="w-full h-[155px] rounded-lg"
           resizeMode="cover"
         />
-        
+
         {/* Discount Badge */}
         {item.discount && (
-          <View className="absolute top-2 left-2 bg-[#DB3022] px-2 py-1 rounded-full">
-            <Text className="text-white text-[10px] font-bold">-{item.discount}%</Text>
+          <View className="absolute top-2 left-2 bg-black px-2.5 py-1 rounded-full">
+            <Text className="text-white text-[12px] font-bold">NEW</Text>
           </View>
         )}
 
@@ -40,15 +40,19 @@ export const ProductCard = ({ item, index }: any) => {
           <Text className="text-gray-400 text-[10px] ml-1">(10)</Text>
         </View>
 
-        <Text className="text-gray-400 text-xs font-medium">{item.brand || 'Dorothy Perkins'}</Text>
+        <Text className="text-gray-400 text-xs font-medium">
+          {item.brand || "Dorothy Perkins"}
+        </Text>
         <Text className="font-bold text-lg text-black mt-1" numberOfLines={1}>
-          {item.title || 'Evening Dress'}
+          {item.title || "Evening Dress"}
         </Text>
 
         {/* Price Section */}
         <View className="flex-row items-center mt-1 mb-12">
           <Text className="text-gray-400 line-through text-sm mr-2">15$</Text>
-          <Text className="text-[#DB3022] font-bold text-sm">{item.price}$</Text>
+          <Text className="text-[#DB3022] font-bold text-sm">
+            {item.price}$
+          </Text>
         </View>
       </View>
     </Animated.View>
